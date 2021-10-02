@@ -1,10 +1,11 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-//program to merge two sorted list 
+//program to merge two sorted list to another list
 void func(int A[],int B[],int C[],int m, int n)
 {
     int i=0,j=0,k=0;
+    //merging algorithm
     while(i<m && j<n)
     {
         if(A[i]<B[j])
