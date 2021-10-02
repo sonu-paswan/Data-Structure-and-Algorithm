@@ -6,9 +6,13 @@ struct Node{
     int data;
     struct Node *next;
 }*top=NULL;
-
+//checking empty condition
+int isEmpty(){
+    return top==NULL;
+}
 void push(int data){
     struct Node* newNode=(struct Node*)malloc(sizeof(struct Node));
+    //algorithm to push an element in stack
     newNode->data=data;
     newNode->next=top;
     top=newNode;
@@ -17,15 +21,17 @@ int pop(){
     int x=INT_MIN;
     
     struct Node*temp=top;
-    if(temp==NULL){
+    if(isEmpty()){
         printf("stack is empty");
         return x;
     }
+    //algorithm pop an element from stack
     top=top->next;
     x=temp->data;
     free(temp);
     return x;
 }
+
 void Display(){
     struct Node*temp=top;
     while(temp){
@@ -39,5 +45,11 @@ int main(){
     push(3);
     push(53);
     push(98);
-    Display();
+    push(100);
+    // Display();
+    printf("%d\n",pop());
+    printf("%d\n",pop());
+    printf("%d\n",pop());
+    printf("%d\n",pop());
 }
+//we can use infinty length stack using linked list
