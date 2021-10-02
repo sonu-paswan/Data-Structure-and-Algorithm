@@ -39,5 +39,9 @@ int main(){
     push(3);
     push(53);
     push(98);
-    Display();
+    // Display();
+    printf("%d\n",pop());
+    printf("%d\n",pop());
+    printf("%d\n",pop());
+    printf("%d\n",pop());
 }
