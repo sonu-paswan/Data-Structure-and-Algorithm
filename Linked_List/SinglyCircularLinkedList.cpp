@@ -49,7 +49,7 @@ Node *GiveLastNode(Node *p) //traverse to last Node of SCLL
     do
     {
         temp = temp->next;
-    } while (temp->next != p);
+    } while (temp->next != p);//condition for last node in scll
     return temp;
 }
 
@@ -74,6 +74,7 @@ int main()
     int arr[] = {3, 4, 2, 1, 7, 9};
     int size = sizeof(arr) / sizeof(arr[0]);
     CreateCLL(arr, size);
+    cout<<"initial SCLL\n";
     DisplayWithLinks(head);
 
     /// insertion at starting of node ///
@@ -85,7 +86,19 @@ int main()
     // head = newNode;
     // DisplayWithLinks(head);
     ////////////////////////////////////
-
+    /// insertion in between first and last node in scll ///
+       int positon =3;
+       Node *newNode=new Node;
+       newNode->data=30;
+       Node *t=head;
+       for(int i=0;i<positon-1;i++){
+           t=t->next;
+       }
+       newNode->next=t->next;
+       t->next=newNode;
+       cout<<"SCLL after insertion at position 3\n";
+       DisplayWithLinks(head);
+    /////////////////////////////////////
     /// inserting at the last of SCLL ///
     // Node *newNode = new Node;
     // newNode->data = 30;
@@ -128,6 +141,7 @@ int main()
 
     /// reversing singly circular linked list ///
     head = ReverseLinks(head);
+    cout<<"after reversing SCLL\n";
     DisplayWithLinks(head);
     return 0;
 }
