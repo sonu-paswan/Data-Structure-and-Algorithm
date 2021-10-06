@@ -29,7 +29,7 @@ void Push_Back(struct Node *ptr,int Data)  //by default insert at last
         temp=temp->next;
     }
     temp->next=last;
-    last=temp;
+    // last=temp;
 }
 int main()
 {
