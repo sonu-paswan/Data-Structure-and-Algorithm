@@ -3,6 +3,7 @@
 using namespace std;
 
 // Queue implementatiom using stack data structure
+// by making dequeue operation costlier 
 struct Queue
 {
     stack<int> stack1;
@@ -12,11 +13,11 @@ void enqueue(Queue *, int);
 int dequeue(Queue *);
 bool isEmpty(Queue *);
 
-void enqueue(Queue *Q, int data)
+void enqueue(Queue *Q, int data)//enqueue to stack1
 {
     Q->stack1.push(data);
 }
-int dequeue(Queue *Q)
+int dequeue(Queue *Q)//dequeue from stack2
 {
     int x = -1;
     if (isEmpty(Q))
@@ -36,7 +37,7 @@ int dequeue(Queue *Q)
     Q->stack2.pop();
     return x;
 }
-bool isEmpty(Queue *Q)
+bool isEmpty(Queue *Q)//empty function for queue 
 {
     if (Q->stack1.empty() && Q->stack2.empty())
         return true;
