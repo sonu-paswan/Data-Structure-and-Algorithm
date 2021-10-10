@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//gfg probelm solved 
+//gfg probelm solved for checking loop for linked list
 struct Node{
     int data;
     struct Node*next;
@@ -18,7 +18,7 @@ void createList(int a[],int  lenn){
         last=newNode;
     }
 }
-void SetLoop(int pos){
+void SetLoop(int pos){       // creating loop function
     struct Node *temp=head,*loop=head;
     if(pos==0){
         return;
@@ -33,7 +33,7 @@ void SetLoop(int pos){
     temp->next=loop;
     }
 }
-int detectLoop(struct Node* head)
+int detectLoop(struct Node* head) // loop checking program 
     {
         // your code here
         struct Node*temp1=head;
