@@ -50,8 +50,9 @@ int detectLoop(struct Node* head) // loop checking program
 int main()
 {
     int arr[]={4,5,3,2,1,9};
-    createList(arr,6);
-    SetLoop(6);
+    int size=sizeof(arr)/sizeof(arr[0]);
+    createList(arr,size);
+    SetLoop(5);
     int result=detectLoop(head);
     if(result==1){
         printf("true\n");
