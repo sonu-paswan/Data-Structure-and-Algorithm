@@ -53,3 +53,6 @@ int main(){
     printf("%d\n",pop());
 }
 //we can use infinty length stack using linked list
+
+// note: - In stack using linked list the new element is  added  in the  head of linked list 
+// and deletion is  also  done at head pointer 
