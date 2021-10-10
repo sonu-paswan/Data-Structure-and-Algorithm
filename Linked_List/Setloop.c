@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+//gfg probelm solved 
 struct Node{
     int data;
     struct Node*next;
