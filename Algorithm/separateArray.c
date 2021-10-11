@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //problem separate negative numbers in one side of array and positive numbers in another side
-
+//problem solved in just normal knowlegde , it can be modified better 
 int *fun(int *p, int len)
 {
     int *pointer=(int*)malloc(sizeof(int)*len);
