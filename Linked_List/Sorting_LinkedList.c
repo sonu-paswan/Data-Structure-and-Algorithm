@@ -56,8 +56,7 @@ void insert(struct Node *Head, int data)//insert function in ascending order
         temp->next = newNode;
     }
 }
-void polynomial(struct Node *Head){//incomplete function
-}
+
 int main()
 {
     // add(head,390);
