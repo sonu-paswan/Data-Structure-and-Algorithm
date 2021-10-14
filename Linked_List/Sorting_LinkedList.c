@@ -40,7 +40,7 @@ void insert(struct Node *Head, int data)//insert function in ascending order
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
 
-    if (Head == NULL || data < head->data)
+    if (Head == NULL || data < head->data)//insertion at first if element is less than head->data
     {
         newNode->next = Head;
         head = newNode;
@@ -48,7 +48,7 @@ void insert(struct Node *Head, int data)//insert function in ascending order
     else
     {
         struct Node *temp = Head;
-        while (temp->next != NULL && temp->next->data < data)
+        while (temp->next != NULL && temp->next->data < data)//insertion after head node
         {
             temp = temp->next;
         }
@@ -56,16 +56,14 @@ void insert(struct Node *Head, int data)//insert function in ascending order
         temp->next = newNode;
     }
 }
-void polynomial(struct Node *Head){
-    
-}
+
 int main()
 {
     // add(head,390);
-    insert(head, 390);
+    insert(head, 38);
     insert(head, 34);
     insert(head, 4);
-    insert(head, 340);
+    insert(head, 76);
     insert(head, 3);
     display(head);
 
