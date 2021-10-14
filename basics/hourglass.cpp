@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-///  HourGlass problem from hacker rank 
+///  HourGlass famous problem from hacker rank 
 /// solved on 14/10/2021
 using namespace std;
 int MAX(int array[],int  len){ // max integer finder
