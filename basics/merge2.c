@@ -1,21 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+int array[50];
 // program to merge in a single array considering two lists
 void merge(int a[], int l, int m, int h)
 {
-    int size = h - l + 1;
+
     int i, j, k = 0;
-    int *array = (int *)malloc(sizeof(int) * size);
-    if ((h - l) % 2 == 0)
-    {
-        i = l;
-        j = m;
-    }
-    else
-    {
-        i = l;
-        j = m + 1;
-    }
+    i = l;
+    j = m + 1;
     while (i <= m && j <= h)
     {
         if (a[i] < a[j])
@@ -23,22 +15,28 @@ void merge(int a[], int l, int m, int h)
         else
             array[k++] = a[j++];
     }
-    while (i <= m)
+    if (j > h)
     {
-        array[k++] = a[i++];
+        while (i <= m)
+        {
+            array[k++] = a[i++];
+        }
     }
-    while (j <= h)
+    else
     {
-        array[k++] = a[j++];
+        while (j <= h)
+        {
+            array[k++] = a[j++];
+        }
     }
-    for (int i = 0; i < size; i++)
+    for (int m = l; m <= h; m++)
     {
-        a[i] = array[i];
+        a[m] = array[m];
     }
 }
 int main()
 {
-    int arr[] = {6, 7, 8, 9, 1, 2,3, 4, 5};
+    int arr[] = {6, 7, 8, 9, 11, 2, 3, 4, 5};
     int len = sizeof(arr) / sizeof(arr[0]);
     int low = 0;
     int high = len - 1;
