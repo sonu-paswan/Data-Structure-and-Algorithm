@@ -23,9 +23,9 @@ void func(int A[],int B[],int C[],int m, int n)
     }
 }
 int main()
-{   int arr1[]={200};
+{   int arr1[]={6,7,8,9};
     int a=sizeof(arr1)/sizeof(arr1[0]);
-    int arr2[]={34};
+    int arr2[]={1,2,3,4,5};
     int b=sizeof(arr2)/sizeof(arr2[0]);
     // sort(arr1,arr1+a);
     // sort(arr2,arr2+b);
