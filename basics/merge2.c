@@ -50,3 +50,4 @@ int main()
     }
     return 0;
 }
+// note: - condition is that the two list at either side of array middle elements must be sorted
