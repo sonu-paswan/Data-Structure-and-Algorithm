@@ -5,7 +5,7 @@ int array[50];
 void merge(int a[], int l, int m, int h)
 {   // merge algorithm
 
-    int i, j, k = 0;
+    int i, j, k = l;
     i = l;
     j = m + 1;
     while (i <= m && j <= h)
