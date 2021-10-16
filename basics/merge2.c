@@ -3,7 +3,7 @@
 int array[50];
 // program to merge in a single array considering two lists
 void merge(int a[], int l, int m, int h)
-{
+{   // merge algorithm
 
     int i, j, k = 0;
     i = l;
