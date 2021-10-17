@@ -7,7 +7,7 @@ struct Node
     int data;
     struct Node *next;
 } *head = NULL;
-void createList(int A[], int size)
+void createList(int A[], int size)//create function
 {
     int i = 0;
     struct Node *last, *temp;
@@ -36,7 +36,7 @@ void add(struct Node *ptr, int Data) //by default insert at last
     }
     temp->next = last;
 }
-void insertList(struct Node *p, int data, int position)
+void insertList(struct Node *p, int data, int position) //insert according to position
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
@@ -57,7 +57,7 @@ void insertList(struct Node *p, int data, int position)
         temp->next = ptr;
     }
 }
-int delete (struct Node *p, int pos)
+int delete (struct Node *p, int pos) // delete by position
 {
     int x = -1;
     if (head == NULL)
@@ -102,7 +102,7 @@ void displayValue(struct Node *p)
         p = p->next;
     }
 }
-void displaywithlinks(struct Node *p)
+void displaywithlinks(struct Node *p) // display function
 {
     if (p == NULL)
     {
@@ -115,7 +115,7 @@ void displaywithlinks(struct Node *p)
         p = p->next;
     }
 }
-void menu()
+void menu()  
 {
     printf("menu for linked list\n");
 
@@ -125,7 +125,7 @@ void menu()
     printf("4) type D for Display linked list\n");
     printf("5) type E for exit\n");
 }
-int main()
+int main()//  driver program
 {
     int size;
     printf("enter size of linked list : \n");
