@@ -4,10 +4,12 @@
 
 int main()
 {
-    int num1=9456;
-    int num2=36;
+    int num1;
+    int num2;
+    printf("enter two numbers for multiplication: ");
+    scanf("%d %d",&num1,&num2);
     int product,carry=0,i,j=0;
-    int arr[10];
+    int arr[100];
     while(num1){
         arr[j++]=num1%10;
         num1/=10;
