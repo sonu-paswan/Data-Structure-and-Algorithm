@@ -1,6 +1,6 @@
 #include <stdio.h>
 // program to find factorial for bigger numbers
-// 10/19/2021
+// 19/10/2021
 #define MAX 500
 int multiply(int, int[], int); // basic multiplication program
 
