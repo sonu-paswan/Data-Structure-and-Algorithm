@@ -47,4 +47,4 @@ int main()
     return 0;
 }
 
-// reference  geeks for geeks
+// reference  GeeksforGeeks
