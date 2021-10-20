@@ -34,11 +34,17 @@ int main()
         }
     }
     //// printing sparse matrix
-    for(int i=0;i<3;i++){
-        for(int j=0;j<size;j++){
-            printf("%d ",matrix2[i][j]);
-        }
-        printf("\n");
+    printf("value  : ");
+    for(int v=0;v<size;v++){
+        printf("%d ",matrix2[0][v]); // value
+    }
+    printf("\nrow    : ");
+    for(int r=0;r<size;r++){
+        printf("%d ",matrix2[1][r]); // row
+    }
+    printf("\ncoloum : ");
+    for(int c=0;c<size;c++){
+        printf("%d ",matrix2[2][c]); // coloum
     }
     return 0;
 }
