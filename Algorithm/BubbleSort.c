@@ -1,6 +1,7 @@
 // Bubble sort program in c language
 //10/20/2021
 #include <stdio.h>
+#include <stdlib.h>
 void swap(int *a,int *b){
     int temp=*a;
     *a=*b;
@@ -24,8 +25,14 @@ void BubbleSort(int arr[],int size){
 }
 int main()
 {
-    int array[]={4,7,6,8,10,2,1,15};
-    int len=sizeof(array)/sizeof(array[0]);
+    int len;
+    printf("enter size of array : ");
+    scanf("%d",&len);
+    int *array=(int*)malloc(sizeof(int)*len);
+    printf("enter elements :-\n");
+    for(int j=0;j<len;j++){
+        scanf("%d",&array[j]);
+    }
     BubbleSort(array,len);
     for(int i=0;i<len;i++){
         printf("%d ",array[i]);
