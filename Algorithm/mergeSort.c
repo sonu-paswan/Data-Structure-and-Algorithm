@@ -37,9 +37,9 @@ void mergeSort(int a[],int left, int right){
     count++;
     if(left<right){
         int mid=(left+right)/2;
-        mergeSort(a,left,mid);
-        mergeSort(a,mid+1,right);
-        merge(a,left,mid,right);
+        mergeSort(a,left,mid); //sorting first half 
+        mergeSort(a,mid+1,right);//sorting second half 
+        merge(a,left,mid,right);//merging both half and sorting completed 
     }
 }
 int main()
