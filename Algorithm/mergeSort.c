@@ -1,8 +1,9 @@
 #include <stdio.h>
 int array[50];
+static int count;
 void merge(int a[], int l, int m, int h)
 {   // merge algorithm
-
+    count++;
     int i, j, k = l;
     i = l;
     j = m + 1;
@@ -33,6 +34,7 @@ void merge(int a[], int l, int m, int h)
     }
 }
 void mergeSort(int a[],int left, int right){
+    count++;
     if(left<right){
         int mid=(left+right)/2;
         mergeSort(a,left,mid);
@@ -42,10 +44,11 @@ void mergeSort(int a[],int left, int right){
 }
 int main()
 {
-    int arr[]={4,5,2,1,8,9,-4,6,78};
-    mergeSort(arr,0,8);
-    for(int i=0;i<9;i++){
+    int arr[]={38,27,43,3,9,82,10};
+    mergeSort(arr,0,6);
+    for(int i=0;i<7;i++){
         printf("%d ",arr[i]);
     }
+    printf("number of steps  %d",count);
     return 0;
 }
