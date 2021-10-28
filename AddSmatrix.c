@@ -130,3 +130,70 @@ int main()
 	print(C);
 	return 0;
 }
+// sample output one
+/*
+enter rows and column of matrix
+4 4
+enter number of non zero elements :3
+enter row , colomn and value
+1 3 7
+enter row , colomn and value
+2 2 5
+enter row , colomn and value
+3 4 6
+for A
+printing matrix 
+1       3       7
+2       2       5
+3       4       6
+enter rows and column of matrix
+4 4 
+enter number of non zero elements :2
+enter row , colomn and value
+1 1 3
+enter row , colomn and value
+2 2 9
+for B
+printing matrix  
+1       1       3
+2       2       9
+for A+B 
+printing matrix  
+1       1       3
+1       3       7
+2       2       14
+3       4       6
+*/
+// sample ouput two  
+/*
+enter rows and column of matrix
+3 3 
+enter number of non zero elements :
+2 
+enter row , colomn and value
+1 1 4
+enter row , colomn and value
+3 1 5
+for A
+printing matrix 
+1       1       4
+3       1       5
+enter rows and column of matrix
+2 3 
+enter number of non zero elements : 
+3
+enter row , colomn and value
+1 1 6
+enter row , colomn and value
+1 2 8
+enter row , colomn and value
+2 3 5
+for B
+printing matrix        
+1       1       6      
+1       2       8      
+2       3       5      
+dimensions are not same
+for A+B 
+matrix not found
+*/
