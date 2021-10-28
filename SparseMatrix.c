@@ -27,18 +27,13 @@ int main()
         for(int j=0;j<coloum;j++){
             if(matrix[i][j]){
                 matrix2[0][k]=matrix[i][j]; // stores value
-                matrix2[1][k]=i; // stores position of row
-                matrix2[2][k]=j; // stores position of coloum
+                matrix2[1][k]=i+1; // stores position of row
+                matrix2[2][k]=j+1; // stores position of coloum
                 k++;
             }
         }
     }
-    //// printing sparse matrix
-    printf("value  : ");
-    for(int v=0;v<size;v++){
-        printf("%d ",matrix2[0][v]); // value
-    }
-    printf("\nrow    : ");
+    printf("row    : ");
     for(int r=0;r<size;r++){
         printf("%d ",matrix2[1][r]); // row
     }
@@ -46,5 +41,11 @@ int main()
     for(int c=0;c<size;c++){
         printf("%d ",matrix2[2][c]); // coloum
     }
+    //// printing sparse matrix
+    printf("\nvalue  : ");
+    for(int v=0;v<size;v++){
+        printf("%d ",matrix2[0][v]); // value
+    }
+    
     return 0;
 }
