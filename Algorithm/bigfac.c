@@ -18,6 +18,7 @@ void factorial(int num)
     {
         printf("%d", arr[i]);
     }
+    printf("\n number of digits %d",size);
 }
 int multiply(int number, int array[], int size)
 {

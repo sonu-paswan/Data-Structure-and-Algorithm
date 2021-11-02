@@ -52,3 +52,6 @@ int main()
     printf("number of steps  %d",count);
     return 0;
 }
+
+// note: - space complexity is O(n) auxilary
+//         and time complexity is O(nlogn)
