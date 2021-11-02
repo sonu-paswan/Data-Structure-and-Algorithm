@@ -53,5 +53,5 @@ int main()
     return 0;
 }
 
-// note: - space complexity is O(n)
+// note: - space complexity is O(n) auxilary
 //         and time complexity is O(nlogn)
