@@ -1,4 +1,6 @@
 /* basic function of queue for using it in tree  */
+#include <stdlib.h>
+#include <stdio.h>
 #include "Tnode.c" // for tree structure
 
 struct Queue
