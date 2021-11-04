@@ -9,7 +9,7 @@
 void printtree(struct tNode *r)
 {
     struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
-    CreateQueue(q, 7);
+    CreateQueue(q, 50);
     struct tNode *temp = r;
     if (temp == NULL)
     {
@@ -38,15 +38,41 @@ struct tNode *createNode(struct tNode *p, int data)
     p->Rchild = NULL;
     return p;
 }
+struct tNode *createTree(struct tNode *r){
+    int a,b;
+    struct tNode *temp=NULL,*p=NULL;
+    struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
+    CreateQueue(q, 50);
+    enqueue(q,r);
+    while(!isEmpty(q)){
+        p=dequeue(q);
+        printf("enter Left child of %d : ",p->data);
+        scanf("%d",&a);
+        if(a!=-1){
+            temp=createNode(temp,a);
+            p->Lchild=temp;
+            enqueue(q,temp);
+        }
+        printf("enter right child of %d : ",p->data);
+        scanf("%d",&b);
+        if(b!=-1){
+            temp=createNode(temp,b);
+            p->Rchild=temp;
+            enqueue(q,temp);
+        }
+    }
+    return r;
+}
 int main()
 {
     struct tNode *root = NULL;
     root = createNode(root, 4);
-    root->Lchild = createNode(root->Lchild, 7);
-    root->Rchild = createNode(root->Rchild, 8);
-    root->Lchild->Lchild = createNode(root->Lchild->Lchild, 6);
-    root->Lchild->Rchild=createNode(root->Lchild->Rchild,10);
-    root->Rchild->Rchild = createNode(root->Rchild->Rchild, 5);
+    root=createTree(root);
+    // root->Lchild = createNode(root->Lchild, 7);
+    // root->Rchild = createNode(root->Rchild, 8);
+    // root->Lchild->Lchild = createNode(root->Lchild->Lchild, 6);
+    // root->Lchild->Rchild=createNode(root->Lchild->Rchild,10);
+    // root->Rchild->Rchild = createNode(root->Rchild->Rchild, 5);
     printtree(root);
     return 0;
 }
