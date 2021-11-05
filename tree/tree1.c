@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "queue.c"
 // struct tNode{                           //////////////////////
 //     int data;                           //  this structure defination
 //     struct tNode *Lchild;               //  is present in Tnode.c
 //     struct tNode *Rchild;               ////////////////////
 // };
+int maxElement;
 void printtree(struct tNode *r) /* level order traversal in a tree */
 {
+    maxElement=INT_MIN;
     struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
     CreateQueue(q, 50);
     struct tNode *temp = r;
@@ -19,6 +22,8 @@ void printtree(struct tNode *r) /* level order traversal in a tree */
     while (temp)
     {
         printf("data : %d \n", temp->data);
+        if(temp->data > maxElement) /* for finding max element*/
+        maxElement=temp->data;
         if (temp->Lchild)
         {
             enqueue(q, temp->Lchild); // error
@@ -98,6 +103,7 @@ int main()
     InOrder(root);
     printf("PostOrder traversal\n");
     PostOrder(root);
+    printf("maximum element %d",maxElement);
     return 0;
 }
 /* level order traversal in tree algorithm (BFS: - breadth first search)
