@@ -6,7 +6,7 @@
 //     struct tNode *Lchild;               //  is present in Tnode.c
 //     struct tNode *Rchild;               ////////////////////
 // };
-void printtree(struct tNode *r)
+void printtree(struct tNode *r) /* level order traversal in a tree */
 {
     struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
     CreateQueue(q, 50);
@@ -30,7 +30,7 @@ void printtree(struct tNode *r)
         temp = dequeue(q); // error
     }
 }
-struct tNode *createNode(struct tNode *p, int data)
+struct tNode *createNode(struct tNode *p, int data) 
 {
     p = (struct tNode *)malloc(sizeof(struct tNode));
     p->data = data;
@@ -38,7 +38,8 @@ struct tNode *createNode(struct tNode *p, int data)
     p->Rchild = NULL;
     return p;
 }
-struct tNode *createTree(struct tNode *r){
+struct tNode *createTree(struct tNode *r)/* tree create function */
+{
     int a,b;
     struct tNode *temp=NULL,*p=NULL;
     struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
@@ -63,17 +64,40 @@ struct tNode *createTree(struct tNode *r){
     }
     return r;
 }
+void PreOrder(struct tNode *r){
+    if(r!=NULL){
+        printf("data : %d\n",r->data);
+        PreOrder(r->Lchild);
+        PreOrder(r->Rchild);
+    }
+}
+void InOrder(struct tNode *r){
+    if(r!=NULL){
+        InOrder(r->Lchild);
+        printf("data : %d\n",r->data);
+        InOrder(r->Rchild);
+    }
+}
+void PostOrder(struct tNode *r){
+    if(r!=NULL){
+        PostOrder(r->Lchild);
+        PostOrder(r->Rchild);
+        printf("data : %d\n",r->data);
+    }
+}
 int main()
 {
     struct tNode *root = NULL;
     root = createNode(root, 4);
     root=createTree(root);
-    // root->Lchild = createNode(root->Lchild, 7);
-    // root->Rchild = createNode(root->Rchild, 8);
-    // root->Lchild->Lchild = createNode(root->Lchild->Lchild, 6);
-    // root->Lchild->Rchild=createNode(root->Lchild->Rchild,10);
-    // root->Rchild->Rchild = createNode(root->Rchild->Rchild, 5);
+    printf("Level Order Traversal \n");
     printtree(root);
+    printf("PreOrder traversal\n");
+    PreOrder(root);
+    printf("InOrder traversal\n");
+    InOrder(root);
+    printf("PostOrder traversal\n");
+    PostOrder(root);
     return 0;
 }
 /* level order traversal in tree algorithm (BFS: - breadth first search)
