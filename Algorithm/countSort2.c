@@ -44,10 +44,15 @@ void CountSort2(int a[], int size)
 }
 int main()
 {
-    int arr[] = {2, 3, 4, 1, 5, 3,-1,-5,23};
+    int arr[] = {-2,4,3,5,2,-3,3,4,-4};
     int len = sizeof(arr) / sizeof(arr[0]);
     CountSort2(arr, len);
     for (int i = 0; i < len; i++)
         printf("%d ", arr[i]);
     return 0;
 }
+
+/*the idea behind storing negative numbers is 
+  storing smallest number in zeroth position of count
+  and shifting all elements according to it
+*/
