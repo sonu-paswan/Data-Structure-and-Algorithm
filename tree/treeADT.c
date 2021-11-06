@@ -21,13 +21,13 @@ void printtree(struct tNode *r) /* level order traversal in a tree */
         printf("data : %d \n", temp->data);
         if (temp->Lchild)
         {
-            enqueue(q, temp->Lchild); // error
+            enqueue(q, temp->Lchild); 
         }
         if (temp->Rchild)
         {
-            enqueue(q, temp->Rchild); // error
+            enqueue(q, temp->Rchild); 
         }
-        temp = dequeue(q); // error
+        temp = dequeue(q); 
     }
 }
 struct tNode *createNode(struct tNode *p, int data) 
