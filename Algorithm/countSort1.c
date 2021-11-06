@@ -34,6 +34,7 @@ void CountSort(int a[], int size)
             j++;
         }
     }
+    free(count);
 }
 int main()
 {

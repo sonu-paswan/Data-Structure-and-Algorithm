@@ -40,6 +40,7 @@ void CountSort2(int a[], int size)
             j++;
         }
     }
+    free(count);
 }
 int main()
 {
