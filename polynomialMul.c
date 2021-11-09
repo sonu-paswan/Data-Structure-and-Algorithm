@@ -37,7 +37,7 @@ struct Node *insertPoly(struct Node *p, int coef, int exp) // insert function to
         {
             if (p->expo == exp)
             {
-                p->data += coef;
+                p->data += coef; // for adding same expo coefficients
                 return p;
             }
         }
@@ -51,7 +51,7 @@ struct Node *insertPoly(struct Node *p, int coef, int exp) // insert function to
         {
             if (temp->next->expo == exp)
             {
-                int sum = temp->next->data + coef;
+                int sum = temp->next->data + coef; // for adding same expo coefficients
                 temp->next->data = sum;
                 return p;
             }
