@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "queue.c"
+#include "StackQueue.c"
 // struct tNode{                           //////////////////////
 //     int data;                           //  this structure defination
 //     struct tNode *Lchild;               //  is present in Tnode.c
@@ -21,16 +21,16 @@ void printtree(struct tNode *r) /* level order traversal in a tree */
         printf("data : %d \n", temp->data);
         if (temp->Lchild)
         {
-            enqueue(q, temp->Lchild); 
+            enqueue(q, temp->Lchild);
         }
         if (temp->Rchild)
         {
-            enqueue(q, temp->Rchild); 
+            enqueue(q, temp->Rchild);
         }
-        temp = dequeue(q); 
+        temp = dequeue(q);
     }
 }
-struct tNode *createNode(struct tNode *p, int data) 
+struct tNode *createNode(struct tNode *p, int data)
 {
     p = (struct tNode *)malloc(sizeof(struct tNode));
     p->data = data;
@@ -38,51 +38,78 @@ struct tNode *createNode(struct tNode *p, int data)
     p->Rchild = NULL;
     return p;
 }
-struct tNode *createTree(struct tNode *r)/* tree create function */
+struct tNode *createTree(struct tNode *r) /* tree create function */
 {
-    int a,b;
-    struct tNode *temp=NULL,*p=NULL;
+    int a, b;
     struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
+    struct tNode *temp = NULL, *p = NULL;
     CreateQueue(q, 50);
-    enqueue(q,r);
-    while(!isEmpty(q)){
-        p=dequeue(q);
-        printf("enter Left child of %d : ",p->data);
-        scanf("%d",&a);
-        if(a!=-1){
-            temp=createNode(temp,a);
-            p->Lchild=temp;
-            enqueue(q,temp);
+    enqueue(q, r);
+    while (!isEmpty(q))
+    {
+        p = dequeue(q);
+        printf("enter Left child of %d : ", p->data);
+        scanf("%d", &a);
+        if (a != -1)
+        {
+            temp = createNode(temp, a);
+            p->Lchild = temp;
+            enqueue(q, temp);
         }
-        printf("enter right child of %d : ",p->data);
-        scanf("%d",&b);
-        if(b!=-1){
-            temp=createNode(temp,b);
-            p->Rchild=temp;
-            enqueue(q,temp);
+        printf("enter right child of %d : ", p->data);
+        scanf("%d", &b);
+        if (b != -1)
+        {
+            temp = createNode(temp, b);
+            p->Rchild = temp;
+            enqueue(q, temp);
         }
     }
     return r;
 }
-void PreOrder(struct tNode *r){
-    if(r!=NULL){
-        printf("data : %d\n",r->data);
+void PreOrder(struct tNode *r) // Root Left Right
+{
+    if (r != NULL)
+    {
+        printf("data : %d\n", r->data);
         PreOrder(r->Lchild);
         PreOrder(r->Rchild);
     }
 }
-void InOrder(struct tNode *r){
-    if(r!=NULL){
+void InOrder(struct tNode *r) // Left Root Right
+{
+    if (r != NULL)
+    {
         InOrder(r->Lchild);
-        printf("data : %d\n",r->data);
+        printf("data : %d\n", r->data);
         InOrder(r->Rchild);
     }
 }
-void PostOrder(struct tNode *r){
-    if(r!=NULL){
+void PostOrder(struct tNode *r) // Left Right Root 
+{
+    if (r != NULL)
+    {
         PostOrder(r->Lchild);
         PostOrder(r->Rchild);
-        printf("data : %d\n",r->data);
+        printf("data : %d\n", r->data);
+    }
+}
+void PreOrderUsingStack(struct tNode *t)
+{
+    struct Stack *S=(struct Stack*)malloc(sizeof(struct Stack));
+    CreateStack(S,10);
+    while(1){
+        while(t!=NULL){
+            printf("%d ",t->data);
+            push(S,t);
+            t=t->Lchild;
+        }
+        if(isEmptyinStack(S)){
+            break;
+        }
+        t=pop(S);
+        t=t->Rchild;
+        
     }
 }
 
