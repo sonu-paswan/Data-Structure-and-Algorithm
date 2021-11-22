@@ -97,17 +97,19 @@ void PostOrder(struct tNode *r) // Left Right Root
 void PreOrderUsingStack(struct tNode *t)
 {
     struct Stack *S=(struct Stack*)malloc(sizeof(struct Stack));
-    CreateStack(S,10);
+    CreateStack(S,50);
     while(1){
         while(t!=NULL){
-            printf("%d ",t->data);
-            push(S,t);
+            printf("%d ",t->data); // first process root 
+            push(S,t); 
             t=t->Lchild;
+            // then add left sub trees to stack if exit
         }
         if(isEmptyinStack(S)){
             break;
         }
         t=pop(S);
+        // after completing left sub trees go to right sub trees
         t=t->Rchild;
         
     }
