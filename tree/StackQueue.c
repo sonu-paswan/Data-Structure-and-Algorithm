@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Tnode.c" // for tree structure
-
+// structure for queue ds
 struct Queue
 {
     int size;
@@ -50,8 +50,9 @@ struct tNode *dequeue(struct Queue *Q)
     }
     return x;
 }
-/* basic operations of stack for using in tree */
 
+/* basic operations of stack for using in tree */
+// structure for stack ds
 struct Stack
 {
     int size;
