@@ -16,6 +16,8 @@ int main()
 
     printf("PreOrder traversal\n");
     PreOrderUsingStack(root);
+    printf("InOrder traversal\n");
+    InOrderUsingStack(root);
     
     return 0;
 }
