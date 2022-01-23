@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// object oreinted stack implementation
 class Stack
 {
 private:
@@ -96,8 +97,6 @@ int main()
     Obj.push(4);
     Obj.Display();
     cout<<"deleting "<<Obj.pop()<<endl;
-    
-    // cout<<boolalpha<<Obj.is_Full()<<endl;
     Obj.Display();
 
     return 0;

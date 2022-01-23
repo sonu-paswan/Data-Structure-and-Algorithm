@@ -101,14 +101,34 @@ void PreOrderUsingStack(struct tNode *t)
     while(1){
         while(t!=NULL){
             printf("%d ",t->data); // first process root 
-            push(S,t); 
-            t=t->Lchild;
-            // then add left sub trees to stack if exit
+            push(S,t); // then add to stack
+            t=t->Lchild; // move to left sub tree
+            
         }
         if(isEmptyinStack(S)){
             break;
         }
         t=pop(S);
+        // after completing left sub trees go to right sub trees
+        t=t->Rchild;
+        
+    }
+}
+void InOrderUsingStack(struct tNode *t)
+{
+    struct Stack *S=(struct Stack*)malloc(sizeof(struct Stack));
+    CreateStack(S,50);
+    while(1){
+        while(t!=NULL){ 
+            push(S,t); // first push left sub trees
+            t=t->Lchild;
+            
+        }
+        if(isEmptyinStack(S)){
+            break;
+        }
+        t=pop(S);
+        printf("%d ",t->data); // process the tree just aftere poping
         // after completing left sub trees go to right sub trees
         t=t->Rchild;
         
