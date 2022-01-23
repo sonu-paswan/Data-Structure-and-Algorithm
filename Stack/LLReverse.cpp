@@ -41,20 +41,22 @@ void Reverse(){
         return;
     }
     Node *temp=head;
-    while(temp!=NULL){
+    while(temp!=NULL){ // O(n)
         S.push(temp);
         temp=temp->next;
     }
     head=S.top();
     S.pop();
     Node *t=head;
-    while(!S.empty()){
+    while(!S.empty()){ // O(n)
         Node *tem=S.top();
         S.pop();
         t->next=tem;
         t=tem;
     }
     t->next=NULL;
+    // time complexity-> O(n)
+    // space complexity-> O(n)
 }
 int main(){
     insert(2);
