@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 void swap(int *a, int *b)
 {
     int temp = *a;
@@ -12,14 +13,8 @@ int partition(int a[], int l, int h)
     int j = h; // for traversing from right to left
     do
     {
-        do
-        {
-            i++;
-        } while (a[i] <= pivot);
-        while (a[j] > pivot)
-        {
-            j--;
-        };
+        do{i++;}while(a[i]<=pivot);
+        do{j--;}while(a[j]>pivot);
         if (i < j)
             swap(&a[i], &a[j]);
     } while (i < j);
@@ -40,13 +35,16 @@ void quicksort(int A[], int l, int h)
 }
 
 int main()
-{
-    int arr[] = {4, 3, 1, 6, 8, 7, 77, 9, 2};
-    int size = sizeof(arr) / sizeof(arr[0]);
+{   int h;
+    // int arr[] = {4, 3, 1, 6, 8, 7, 77, 9, 2,6,34,78,23};
+    scanf("%d",&h);
+    int *arr=(int *)malloc(sizeof(int )*h);
+    for(int i=0;i<h;i++)
+    scanf("%d",&arr[i]);
     int low = 0;
-    int high = 8;
-    quicksort(arr, low, high);
-    for (int i = 0; i < size; i++)
+    
+    quicksort(arr, low, h);
+    for (int i = 0; i < h; i++)
     {
         printf("%d ", arr[i]);
     }

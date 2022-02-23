@@ -38,8 +38,15 @@ void CountSort(int a[], int size)
 }
 int main()
 {
-    int arr[] = {2, 3, 4, 1, 5, 3};
-    int len = sizeof(arr) / sizeof(arr[0]);
+    // int arr[] = {2, 3, 4, 1, 5, 3};
+
+    // int len = sizeof(arr) / sizeof(arr[0]);
+    int len;
+    scanf("%d",&len);
+    int *arr=(int*)malloc(sizeof(int )*len);
+    for(int i=0;i<len;i++){
+        scanf("%d",&arr[i]);
+    }
     CountSort(arr, len);
     for (int i = 0; i < len; i++)
         printf("%d ", arr[i]);
