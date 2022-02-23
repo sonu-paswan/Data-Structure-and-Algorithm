@@ -1,5 +1,6 @@
 #include <stdio.h>
-int array[50];
+#include <stdlib.h>
+int array[5000];
 static int count;
 void merge(int a[], int l, int m, int h)
 {   // merge algorithm
@@ -44,9 +45,15 @@ void mergeSort(int a[],int left, int right){
 }
 int main()
 {
-    int arr[]={38,27,43,3,9,82,10};
-    mergeSort(arr,0,6);
-    for(int i=0;i<7;i++){
+    // int arr[]={38,27,43,3,9,82,10};
+    int len;
+    scanf("%d",&len);
+    int *arr=(int*)malloc(sizeof(int)*len);
+    for(int j=0;j<len;j++){
+        scanf("%d",&arr[j]);
+    }
+    mergeSort(arr,0,len-1);
+    for(int i=0;i<len;i++){
         printf("%d ",arr[i]);
     }
     printf("number of steps  %d",count);
