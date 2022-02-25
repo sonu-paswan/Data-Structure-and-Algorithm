@@ -33,7 +33,7 @@ void BFS(list <int> v[],int size,int start)
 int main()
 {   
     int count=4;
-    list <int> v[count]; // array of empty list 
+    list <int> v[count]; // array of empty list of size 4
     addLink(v,0,1);
     addLink(v,0,2);
     addLink(v,1,2);
