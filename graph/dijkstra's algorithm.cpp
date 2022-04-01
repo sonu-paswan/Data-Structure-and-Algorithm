@@ -19,7 +19,7 @@ void dijkstra(int graph[V][V],int source){
     }
     d[source]=0;
     for(int i=0;i<V;i++){
-        // extracting min
+        // extracting minimum
             Min=INT_MAX;
         for(int j=0;j<V;j++){
             if((d[j]<Min)&&(s[j]!=true)){
@@ -49,10 +49,7 @@ int main()
                         {0,5,0,0,8,0,10,20},
                         {0,0,20,0,0,10,0,0},
                         {0,0,0,0,6,20,0,0}};
-    // int *p=dijkstra(graph,0);
-    // for(int i=0;i<V;i++){
-    //     cout<<*(p+i)<<" ";
-    // }
+    
     dijkstra(graph,0);
     return 0;
 }
