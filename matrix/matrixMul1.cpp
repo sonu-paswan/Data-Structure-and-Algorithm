@@ -79,6 +79,8 @@ int main()
     }
     int *A11=new int[2*2],*A12=new int[2*2],*A21=new int[2*2],*A22=new int[2*2];
     int *B11=new int[2*2],*B12=new int[2*2],*B21=new int[2*2],*B22=new int[2*2];
+
+    // spliting matrix 
     for(int i=0;i<n/2;i++){
         for(int j=0;j<n/2;j++){
             *(A11+i*2+j)=a[i][j];
@@ -119,6 +121,8 @@ int main()
             *(B22+i*2+j)=b[i+2][j+2];
         }
     }
+    
+    // strassen's algorithm 
     int *p,*q,*r,*s,*t,*u,*v;
     p=mul(add(A11,A22,2),add(B11,B22,2),n/2);
     q=mul(add(A21,A22,2),B11,n/2);
@@ -152,6 +156,8 @@ int main()
             c[i+2][j+2]=*(c22+i*2+j);
         }
     }
+
+    // displaying resultant matrix
     cout<<"matric AXB is \n";
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
