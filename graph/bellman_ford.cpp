@@ -1,43 +1,54 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define Max 99999
-int main(){
-    int n,e,source,s,d,w;
-    cout<<"enter the number of vertex in a graph :";
-    cin>>n;
-    int  cost[n][n],dist[n];
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cost[i][j]=Max;
+int main()
+{
+    int n, e, source, s, d, w;
+    cout << "enter the number of vertex in a graph :";
+    cin >> n;
+    int cost[n][n], dist[n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cost[i][j] = Max;
         }
     }
-    cout<<"enter the number of edges in a graph :";
-    cin>>e;
-    cout<<"enter your source vertex in number: ";
-    cin>>source;
-    for(int i=0;i<e;i++){
-        cout<<"edge"<<i+1<<" source "<<" destination "<<" weight ";
-        cin>>s>>d>>w;
-        cost[s][d]=w;
+    cout << "enter the number of edges in a graph :";
+    cin >> e;
+    cout << "enter your source vertex in number: ";
+    cin >> source;
+    for (int i = 0; i < e; i++)
+    {
+        cout << "edge" << i + 1 << " source "
+             << " destination "
+             << " weight ";
+        cin >> s >> d >> w;
+        cost[s][d] = w;
     }
     // bellman ford algorithm
-    for(int i=0;i<n;i++){
-        dist[i]=Max;
+    for (int i = 0; i < n; i++)
+    {
+        dist[i] = Max;
     }
-    dist[source]=0;
-    for(int k=1;k<n;k++){
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if((cost[i][j]!=Max )&&(dist[j]>cost[i][j]+dist[i])){
-                    dist[j]=cost[i][j]+dist[i];
+    dist[source] = 0;
+    for (int k = 1; k < n; k++) // for n-1 passes 
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if ((cost[i][j] != Max) && (dist[j] > cost[i][j] + dist[i])) // relaxation
+                {
+                    dist[j] = cost[i][j] + dist[i];
                 }
             }
         }
     }
-    for(int i=0;i<n;i++){
-        cout<<dist[i]<<" ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << dist[i] << " ";
     }
-
 }
 
 // class test case
