@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define Max 99999
+struct edge{
+    int u;
+    int v;
+    int w;
+
+};
 int main()
 {
     int n, e, source, s, d, w;
@@ -16,6 +22,7 @@ int main()
     }
     cout << "enter the number of edges in a graph :";
     cin >> e;
+    edge Ed[e];
     cout << "enter your source vertex in number: ";
     cin >> source;
     for (int i = 0; i < e; i++)
@@ -25,6 +32,9 @@ int main()
              << " weight ";
         cin >> s >> d >> w;
         cost[s][d] = w;
+        Ed[i].u=s;
+        Ed[i].v=d;
+        Ed[i].w=w;
     }
     // bellman ford algorithm
     for (int i = 0; i < n; i++)
@@ -34,16 +44,22 @@ int main()
     dist[source] = 0;
     for (int k = 1; k < n; k++) // for n-1 passes 
     {
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if ((cost[i][j] != Max) && (dist[j] > cost[i][j] + dist[i])) // relaxation
-                {
-                    dist[j] = cost[i][j] + dist[i];
-                }
+        // for (int i = 0; i < n; i++)
+        // {
+        //     for (int j = 0; j < n; j++)
+        //     {
+        //         if ((cost[i][j] != Max) && (dist[j] > cost[i][j] + dist[i])) // relaxation
+        //         {
+        //             dist[j] = cost[i][j] + dist[i];
+        //         }
+        //     }
+        // } O(n^3)
+        for(int i=0;i<e;i++){
+            if((dist[Ed[i].v])>(cost[Ed[i].u][Ed[i].v]+dist[Ed[i].u])){
+                dist[Ed[i].v]=cost[Ed[i].u][Ed[i].v]+dist[Ed[i].u];
             }
         }
+        // O(|n||e|)  O(n^2)
     }
     for (int i = 0; i < n; i++)
     {
